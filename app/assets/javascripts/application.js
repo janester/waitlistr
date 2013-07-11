@@ -15,5 +15,7 @@
 //= require zepto
 //= require custom.modernizr
 //= require foundation.min
+//= require waitlistr
+
 
 
