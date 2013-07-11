@@ -1,0 +1,8 @@
+= form_tag login_path, :remote => true do
+  =label_tag :username
+  =text_field_tag :username, nil, :autofocus => true
+  =label_tag :password
+  =password_field_tag :password
+  =label_tag :password_confirmation
+  =password_field_tag :password_confirmation
+  =submit_tag "Sign in", :class => "button radius small success"

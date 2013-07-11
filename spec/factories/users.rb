@@ -1,0 +1,9 @@
+# Read about factories at https://github.com/thoughtbot/factory_girl
+
+FactoryGirl.define do
+  factory :user do
+    username "MyString"
+    password_digest "MyString"
+    is_waiting false
+  end
+end

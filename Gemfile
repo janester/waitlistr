@@ -4,18 +4,10 @@ gem 'rails', '3.2.11'
 gem 'pg'
 gem 'jquery-rails'
 gem 'haml'
-gem 'bcrypt-ruby'
-gem 'activesupport'
-gem 'geocoder'
-gem 'carrierwave'
-gem 'fog'
-gem 'rmagick'
-gem 'remotipart'
+gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'titleize'
-gem 'aws-ses'
 gem 'stamp'
-gem 'twilio-ruby'
-
+gem 'pusher'
 
 
 
