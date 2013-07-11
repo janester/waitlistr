@@ -1,0 +1,7 @@
+<% if @current_user.present? %>
+$("#login_logic").empty().append("<%=j render :partial => 'home/login_logic' %>");
+$("#login_form").empty()
+<% else %>
+$("#login_form").empty().append("Sorry, You're Credentials Were Incorrect");
+$("#login_form").append("<%=j render :partial => 'session/form' %>");
+<% end %>

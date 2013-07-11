@@ -9,4 +9,9 @@ class SessionController < ApplicationController
     end
     authenticate
   end
+
+  def destroy
+    session[:uid] = nil
+    authenticate
+  end
 end

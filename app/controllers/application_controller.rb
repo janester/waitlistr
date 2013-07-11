@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
   def authenticate
     if session[:uid].present?
       @current_user = User.find(session[:uid])
+    else
+      @current_user = nil
     end
   end
 end
