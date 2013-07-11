@@ -3,7 +3,7 @@ $("#login_logic").empty().append("<%=j render :partial => 'home/login_logic' %>"
 $("#login_form").empty()
 $("#add_myself").empty().append("<%=j render :partial => 'home/add_btn'  %>")
 <% else %>
-var div = $("<div>").text("Sorry, Your Credentials Were Incorrect").addClass("alert-box alert");
+var div = $("<div>").text("Sorry, Your Credentials Were Incorrect").addClass("alert-box radius alert");
 $("#login_form").empty().append(div);
 div.fadeOut(4000);
 $("#login_form").append("<%=j render :partial => 'session/form' %>");

@@ -6,5 +6,9 @@ Waitlistr::Application.routes.draw do
   post "/login" => "session#create"
   delete "/login" => "session#destroy", :as => "logout"
   get "/home/add" => "home#add"
+  get "/home/remove_check" => "home#remove_check"
+  get "/home/remove" => "home#remove"
+
+
 
 end
