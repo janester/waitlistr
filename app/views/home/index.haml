@@ -1,14 +1,20 @@
 .row
-  .small-4.columns
+  .small-6.large-4.columns
     %h1 Waitlistr
-  .small-4.columns
+  .small-1.large-4.columns
+  .small-5.large-4.columns
+    #login_logic
+      = render :partial => "home/login_logic"
+.row
+  .small-12.large-4.large-centered.columns
+    #login_form
+.row
+  .small-11.small-centered.large-5.large-centered.columns
     .the-list
       #add_myself
         = render :partial => "home/add_btn"
-      %h3 The List
+      %h2 The List
       %ol#list
-  .small-4.columns
-    #login_logic
-      = render :partial => "home/login_logic"
-    #login_form
+
+
 
