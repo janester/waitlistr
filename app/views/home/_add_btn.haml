@@ -1,2 +1,2 @@
--if @current_user.present?
+-if @current_user.present? && !List.first.users.include?(@current_user)
   =link_to("Add Myself", "#", :class => "button radius large", :id => "add-btn")

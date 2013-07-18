@@ -12,8 +12,7 @@
   .small-11.small-centered.large-5.large-centered.columns
     .the-list
       #add_myself
-        -if !@list.include?(@current_user)
-          = render partial:"home/add_btn"
+        = render partial:"home/add_btn"
       %h2 The List
       %ol#list
         - @list.each do |user|
