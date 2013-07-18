@@ -11,7 +11,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130710205028) do
+ActiveRecord::Schema.define(:version => 20130718221526) do
+
+  create_table "lists", :force => true do |t|
+  end
 
   create_table "users", :force => true do |t|
     t.string   "username"
@@ -19,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20130710205028) do
     t.boolean  "is_waiting"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.integer  "position"
   end
 
 end
