@@ -24,4 +24,12 @@ class HomeController < ApplicationController
     Pusher.trigger("jane_channel", "remove_from", "#{@current_user.username}")
     render :nothing => true
   end
+
+  def get_user
+    if @current_user.present?
+      render :json => {username:@current_user.username}
+    else
+      render :json => {username:""}
+    end
+  end
 end

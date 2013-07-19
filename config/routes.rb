@@ -8,6 +8,7 @@ Waitlistr::Application.routes.draw do
   get "/home/add" => "home#add"
   get "/home/remove_check" => "home#remove_check"
   get "/home/remove" => "home#remove"
+  get "/home/get_user" => "home#get_user"
 
 
 
