@@ -74,6 +74,7 @@ window.app =
   add_hover: (data) ->
     console.log(data)
     $("li[data-username=#{data.username}]").hover(-> $(this).toggleClass("hover"))
+    user = data
 
 $(document).ready(app.ready)
 

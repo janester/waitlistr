@@ -2,7 +2,7 @@ window.app =
   pusher: null
   channel: null
   added: []
-  user = null
+  user: null
   ready: ->
     app.pusher = new Pusher("4792ff5d7ea3bfd86bc4")
     app.pusher.subscribe("jane_channel")
