@@ -9,4 +9,12 @@ class ApplicationController < ActionController::Base
       @current_user = nil
     end
   end
+
+  def set_session(user, password)
+    if user.present? && user.authenticate(password)
+      session[:uid] = user.id
+    else
+      session[:uid] = nil
+    end
+  end
 end

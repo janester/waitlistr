@@ -1,9 +1,10 @@
-/ -if @current_user.nil?
-/   =link_to("Login", login_path, :remote => true, :class => "button radius session-btn")
-/ -else
-/   =link_to("Logout", logout_path, :method => "delete", :remote => true, :class => "button radius alert session-btn")
-
-
-
-= link_to_if(@current_user.nil?, "Login", login_path, :remote => true, :class => "button radius session-btn") do
+-if @current_user.nil?
+  =link_to("Login", login_path, :remote => true, :class => "button radius session-btn")
+  =link_to("Sign Up", new_user_path, :remote => true, :class => "button radius")
+-else
   =link_to("Logout", logout_path, :method => "delete", :remote => true, :class => "button radius alert session-btn")
+
+
+
+/ = link_to_if(@current_user.nil?, "Login", login_path, :remote => true, :class => "button radius session-btn") do
+/   =link_to("Logout", logout_path, :method => "delete", :remote => true, :class => "button radius alert session-btn")

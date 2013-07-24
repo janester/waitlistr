@@ -4,11 +4,7 @@ class SessionController < ApplicationController
 
   def create
     user = User.find_by_username(params[:username])
-    if user.present? && user.authenticate(params[:password])
-      session[:uid] = user.id
-    else
-      session[:uid] = nil
-    end
+    set_session(user, params[:password])
     authenticate
   end
 

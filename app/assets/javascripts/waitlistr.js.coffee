@@ -18,23 +18,22 @@ window.app =
     app.channel.bind("add_to", app.add_to)
     app.channel.bind("remove_from", app.remove_from)
   add_to: (data) ->
-    console.log(data)
     #append the user to the list
     li = $("<li>").text(data).addClass("removable").attr("data-username", data)
+    console.log 'appending the thing...'
     $("#list").append(li)
     app.added.push(data)
   remove_from: (data) ->
-    console.log(data)
     $("li[data-username=#{data}]").addClass("remove").fadeOut(500)
   add_to_list: (e) ->
     e.preventDefault()
-    app.get_user()
     $("#add_myself").empty()
     settings =
       datatype: "json"
       type: "get"
       url: "/home/add"
     $.ajax(settings)
+    app.get_user()
   remove_check: ->
     txt = $(this).text()
     settings =
@@ -43,7 +42,6 @@ window.app =
       url: "/home/remove_check?username=#{txt}"
     $.ajax(settings).done(app.remove_from_list)
   remove_from_list: (data) ->
-    console.log(data)
     if data.response == true
       settings =
         datatype: "json"
@@ -66,13 +64,14 @@ window.app =
     $(".the_list").prepend(div)
     div.fadeOut(4000)
   get_user: ->
+    console.log('getting the user');
     settings =
       datatype: "json"
       type: "get"
       url: "/home/get_user"
     $.ajax(settings).done(app.add_hover)
   add_hover: (data) ->
-    console.log(data)
+    console.log('about to add the hover');
     $("li[data-username=#{data.username}]").hover(-> $(this).toggleClass("hover"))
     user = data
 
