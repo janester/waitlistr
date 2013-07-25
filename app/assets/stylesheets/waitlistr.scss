@@ -1,14 +1,45 @@
+@import url(http://fonts.googleapis.com/css?family=Armata|Syncopate|Ropa+Sans|Source+Code+Pro:200,300,400,500,600|Norican|Abril+Fatface|Rye|Megrim|Montserrat+Subrayada);
+// font-family: 'Armata', sans-serif;
+// font-family: 'Syncopate', sans-serif;
+// font-family: 'Ropa Sans', sans-serif;
+// font-family: 'Source Code Pro', sans-serif;
+// font-family: 'Norican', cursive;
+// font-family: 'Abril Fatface', cursive;
+// font-family: 'Rye', cursive;
+// font-family: 'Megrim', cursive;
+// font-family: 'Montserrat Subrayada', sans-serif;
+$f-red: #c60f13;
+h1, h2, .button {
+  // font-family: 'Syncopate', sans-serif;
+  // font-family: 'Montserrat Subrayada', sans-serif;
+  font-family: 'Megrim', cursive;
+  color: white;
+
+}
+
+body {
+  font-family: 'Source Code Pro', sans-serif;
+  font-weight: 200;
+  background: url("dark_wall.png");
+  color: white;
+}
+
 .session-btn {
   margin-top: 0.5em;
 }
 
-#login_logic {
-  text-align: right;
+#login_logic, #title {
+  text-align: center;
+}
+
+#alerts {
+  margin-top: 20px;
 }
 
 .the-list {
   h2, #add_myself {
     text-align: center;
+
   }
   #list {
     list-style: none;
@@ -25,7 +56,18 @@
 }
 
 .hover {
-  background: red;
-  color: white;
+  background: $f-red;
+  color: black;
+  border-radius:3px;
+  position: relative;
+  &:before {
+    content:"\00d7";
+    position:absolute;
+    top:0;
+    right:10px;
+  }
 }
 
+.border {
+  border: 1px dashed white;
+}

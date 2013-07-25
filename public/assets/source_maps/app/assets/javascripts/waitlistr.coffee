@@ -23,6 +23,8 @@ window.app =
     console.log 'appending the thing...'
     $("#list").append(li)
     app.added.push(data)
+    if li.data("username") == app.user
+      app.add_hover({username:app.user})
   remove_from: (data) ->
     $("li[data-username=#{data}]").addClass("remove").fadeOut(500)
   add_to_list: (e) ->
@@ -32,7 +34,7 @@ window.app =
       datatype: "json"
       type: "get"
       url: "/home/add"
-    $.ajax(settings)
+    $.ajax(settings).done(console.log("user gotten"))
     app.get_user()
   remove_check: ->
     txt = $(this).text()
@@ -50,7 +52,7 @@ window.app =
       $.ajax(settings)
       div = $("<div>")
       div.text("You Have Successfully Removed Yourself from the Waitlist").addClass("alert-box radius success")
-      $(".the-list").prepend(div)
+      $("#alerts").prepend(div)
       # =link_to("Add Myself", "#", :class => "button radius success large", :id => "add-btn")
       div.fadeOut(4000)
       if $("#add-btn").length == 0
@@ -61,7 +63,7 @@ window.app =
   cannot_remove: ->
     div = $("<div>")
     div.text("Sorry, you can't remove someone else from the list. Nice try though!").addClass("alert-box radius alert")
-    $(".the_list").prepend(div)
+    $("#alerts").prepend(div)
     div.fadeOut(4000)
   get_user: ->
     console.log('getting the user');
